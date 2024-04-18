@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "a829056b-2428-40bb-8d31-9751db5295f1",
+		"name": "ProyectoBaseBackAuth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ObtenerAccessToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = JSON.parse(responseBody);\r",
+							"pm.globals.set(\"accessToken\", jsonData.accessToken);\r",
+							"pm.globals.set(\"refreshToken\", jsonData.refreshToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJoei1ieFZkMG9FaEY1dk1KYV8wODduS2Z6M043TVhQOEctSnlGdGlSZ2lFIn0.eyJleHAiOjE2NTIzOTY4MDQsImlhdCI6MTY1MjM5Njc0NCwiYXV0aF90aW1lIjoxNjUyMzk2NzA1LCJqdGkiOiI3NjIzZDM2OS0zMTBkLTQ3ZTYtODIzMS01ZTMyYjNkNjcxZDMiLCJpc3MiOiJodHRwczovLzE5Mi4xNjguNi43Mzo4NDQzL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiN2U3YzlkNTItZTQxNC00NzFlLTkwY2MtMjM2NzhkMmIyNTA1IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYXBwLXBhc2FyZWxhLXBhZ29zIiwic2Vzc2lvbl9zdGF0ZSI6IjYxMWNkODcxLWY1NDUtNDllZS05ZmIxLTBjNGJkMTUwZjdmYiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cHM6Ly9wcnVlYmFzLmdlc3RvcmEuYm8iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbWFzdGVyIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwiYXBwLXBhc2FyZWxhLXBhZ29zIjp7InJvbGVzIjpbIkVudmlhciBUcmFuc2ZlcmVuY2lhcyIsIkFwcm9iYXJUcmFuc2ZlcmVuY2lhcyJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjYxMWNkODcxLWY1NDUtNDllZS05ZmIxLTBjNGJkMTUwZjdmYiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlJvbmFsZCBDb2FyaXRlIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicHJ1ZWJhIiwiZ2l2ZW5fbmFtZSI6IlJvbmFsZCIsImZhbWlseV9uYW1lIjoiQ29hcml0ZSIsImVtYWlsIjoicm9uYWxkY29hcml0ZUBnbWFpbC5jb20ifQ.lN7eXSV9lrC_LbkqfgMBtKHrLN813iqHn8wyH532_Rx0mxdCWbN2O2j64wTc-eUgo0t7jyGdD_zmhQp_tFAlVKwVKRaEmwHhGqo5L-5bo94-v4vaXncPdCljBkN_Rnbrbp9Kh6JGh1HwW1AOCmNj7Mu90AYEeA7EDJifrYYjIxymuO5sQwJtAznjuURaX05fM37BHM-lRBqjD5CtAjvvmheZOjrfnU8EwZoazsWlvlp-QvZtEwnAeKTTqw3ernflse8JvACCoAlQpc9S0tFfGLtlli870Vm3te7rRyo4aMgk_dKQ55Sm7zlST1jXGxsaLw2KXFSRor2lT5IwIHRCkw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/api/v1/autenticacion/validate?code=f17c5c00-448d-447e-9b4c-23bf88df1d9f.8f49358d-e89b-4282-8152-bd392ee590cf.d3222696-83c6-4090-ac9d-758c68a262de",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"api",
+						"v1",
+						"autenticacion",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "f17c5c00-448d-447e-9b4c-23bf88df1d9f.8f49358d-e89b-4282-8152-bd392ee590cf.d3222696-83c6-4090-ac9d-758c68a262de"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultarServicioAutorizado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/api/v1/usuarios/info?nroDocumento=6817702",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"api",
+						"v1",
+						"usuarios",
+						"info"
+					],
+					"query": [
+						{
+							"key": "nroDocumento",
+							"value": "6817702"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InfoServicioAutenticado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "asdasdasdas",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/api/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"api",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CerrarSesionEnApp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/api/v1/autenticacion/cerrarSesion?refreshToken={{refreshToken}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"api",
+						"v1",
+						"autenticacion",
+						"cerrarSesion"
+					],
+					"query": [
+						{
+							"key": "refreshToken",
+							"value": "{{refreshToken}}"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

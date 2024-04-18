@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "1c7f5ca3-8d0c-4c3f-a738-13ab5c8be481",
+		"name": "Gestora - Base Backend Autentitcacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Informacion Servicio",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJwYXlsb2FkIjoiZXlKdGIyUjFiR1VpT2lKaGNIQXRjSEoxWldKaGN5SXNJbkp2YkhNaU9sc2lVazlNWDFCU1ZVVkNRU0pkTENKMWMyVnlUbUZ0WlNJNklqRXpNVEU1TURBd0lpd2lkWE5sY2tsRUlqb2lZVEJqTUdJeU56a3RORFExT1MwMFlqSTBMV0ZrWXpjdFlUQmlNbU5oTlRCbE9URmhJbjA9Iiwic2lnbmF0dXJlcyI6W3sicHJvdGVjdGVkIjoiZXlKaGJHY2lPaUpTVXpJMU5pSjkiLCJzaWduYXR1cmUiOiJCWlhOdlRnVFh6NVc1MFY4NmhLUHExblBCUUcrSHFpdVhiVDNtaVdXZlpIN1lJU0VoRmEyR2RpYmErREJWSExjREUxcjBHRDZ5TTNQY0lFQXZxMjJ5K0xiOVlOS0E4bTh3ZHUxZWcwbHByTnNtU1pNTVRaWHYrcUtqa2x5MmVOWXFpMGJvOERDM1RXTUxRSUFMQzJPOTNmTFRUNGVwOUVWaVZTMWZ0QTVMemc9In1dfQ==",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8889/api/v1/usuarios/info?nroDocumento=13119000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"api",
+						"v1",
+						"usuarios",
+						"info"
+					],
+					"query": [
+						{
+							"key": "nroDocumento",
+							"value": "13119000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJwYXlsb2FkIjoiZXlKdGIyUjFiR1VpT2lKaGNIQXRjSEoxWldKaGN5SXNJbkp2YkhNaU9sc2lVazlNWDFCU1ZVVkNRU0pkTENKMWMyVnlUbUZ0WlNJNklqRXpNVEU1TURBd0lpd2lkWE5sY2tsRUlqb2lZVEJqTUdJeU56a3RORFExT1MwMFlqSTBMV0ZrWXpjdFlUQmlNbU5oTlRCbE9URmhJbjA9Iiwic2lnbmF0dXJlcyI6W3sicHJvdGVjdGVkIjoiZXlKaGJHY2lPaUpTVXpJMU5pSjkiLCJzaWduYXR1cmUiOiJCWlhOdlRnVFh6NVc1MFY4NmhLUHExblBCUUcrSHFpdVhiVDNtaVdXZlpIN1lJU0VoRmEyR2RpYmErREJWSExjREUxcjBHRDZ5TTNQY0lFQXZxMjJ5K0xiOVlOS0E4bTh3ZHUxZWcwbHByTnNtU1pNTVRaWHYrcUtqa2x5MmVOWXFpMGJvOERDM1RXTUxRSUFMQzJPOTNmTFRUNGVwOUVWaVZTMWZ0QTVMemc9In1dfQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nroDocumento\":\"13119000\",\r\n    \"nombres\":\"David Josue\",\r\n    \"primerApellido\":\"Meneces\",\r\n    \"segundoApellido\":\"Zelaya\",\r\n    \"fechaNacimiento\":\"1998-10-20\",\r\n    \"correo\":\"davidmeneces98@gmail.com\",\r\n    \"nroCelular\":\"61120416\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/api/v1/usuarios/adicionar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"api",
+						"v1",
+						"usuarios",
+						"adicionar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJwYXlsb2FkIjoiZXlKdGIyUjFiR1VpT2lKaGNIQXRjSEoxWldKaGN5SXNJbkp2YkhNaU9sc2lVazlNWDFCU1ZVVkNRU0pkTENKMWMyVnlUbUZ0WlNJNklqRXpNVEU1TURBd0lpd2lkWE5sY2tsRUlqb2lZVEJqTUdJeU56a3RORFExT1MwMFlqSTBMV0ZrWXpjdFlUQmlNbU5oTlRCbE9URmhJbjA9Iiwic2lnbmF0dXJlcyI6W3sicHJvdGVjdGVkIjoiZXlKaGJHY2lPaUpTVXpJMU5pSjkiLCJzaWduYXR1cmUiOiJCWlhOdlRnVFh6NVc1MFY4NmhLUHExblBCUUcrSHFpdVhiVDNtaVdXZlpIN1lJU0VoRmEyR2RpYmErREJWSExjREUxcjBHRDZ5TTNQY0lFQXZxMjJ5K0xiOVlOS0E4bTh3ZHUxZWcwbHByTnNtU1pNTVRaWHYrcUtqa2x5MmVOWXFpMGJvOERDM1RXTUxRSUFMQzJPOTNmTFRUNGVwOUVWaVZTMWZ0QTVMemc9In1dfQ==",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8889/api/v1/usuarios/eliminar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"api",
+						"v1",
+						"usuarios",
+						"eliminar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
