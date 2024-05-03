@@ -1,5 +1,6 @@
 package app.objetos.repositores;
 
+import app.objetos.dto.ActividadRs;
 import bo.gestora.common.data_base.annot.QueryRepository;
 import bo.gestora.common.data_base.annot.SqlNativeQuery;
 import bo.gestora.common.data_base.annot.SqlParam;
@@ -24,11 +25,5 @@ public interface UsuarioRepo {
     );
     
     
-    
-@SqlNativeQuery(sql = """
-    SELECT idactividad, usuario_id, tipo, detalle, fecha, api_estado, api_transaccion, usu_cre, fec_cre, usu_mod, fec_mod
-    FROM public.actividad
-""")
-public void obtenerActividades();
-
+  
 }

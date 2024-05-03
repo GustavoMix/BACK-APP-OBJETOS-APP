@@ -1,5 +1,6 @@
 package app.objetos.services;
 
+import app.objetos.dto.ActividadRs;
 import app.objetos.dto.UsuarioRs;
 import app.objetos.dto.RespuestaGenericaRs; // Importa la clase RespuestaGenericaRs
 import app.objetos.facade.UsuarioFacade;
@@ -42,15 +43,7 @@ public class UsuarioService {
         }
     }
     
-    @GET
-    @Path("/actividad")
-    @Produces(MediaType.APPLICATION_JSON)
-    public RespuestaGenericaRs getListaTiposIdentificacion(){
-        RespuestaGenericaRs res = usuarioFacade.obtenerTiposIdentificacion();
-        return res;
-    }
-    
-    
+ 
     
     
 }
