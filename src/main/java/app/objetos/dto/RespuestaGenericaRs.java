@@ -1,5 +1,6 @@
 package app.objetos.dto;
 
+import java.util.Date;
 import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,6 +29,7 @@ public class RespuestaGenericaRs {
                        """)
     private String codigoRespuesta;
     private String mensaje;
+    private Date fecha = new Date();
     private Object data;
 
     public RespuestaGenericaRs() {
@@ -36,6 +38,9 @@ public class RespuestaGenericaRs {
     public RespuestaGenericaRs(String codigo, String message, Object obj) {
         codigoRespuesta = codigo;
         mensaje = message;
+        fecha = new Date();
         data = obj;
     }
 }
+
+

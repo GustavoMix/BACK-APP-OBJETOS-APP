@@ -1,17 +1,15 @@
 package app.objetos.services;
 
 import app.objetos.dto.ActividadRs;
-import app.objetos.dto.RespuestaGenericaRs;
 import app.objetos.facade.ActividadFacade;
-import java.util.List;
-import java.util.logging.Logger;
+
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import org.eclipse.microprofile.openapi.annotations.Operation;
+import java.util.List;
+import java.util.logging.Logger;
 
 @Path("/objetos")
 public class ActividadService {
@@ -19,13 +17,18 @@ public class ActividadService {
 
     @Inject
     ActividadFacade actividadFacade;
+
     @GET
     @Path("/actividad")
     @Produces(MediaType.APPLICATION_JSON)
-    //@ProtectedAccess
-    //@SecurityRequirement(name = "apiKey")
     public List<ActividadRs> obtenerActividades() {
-        LOG.info("GET /dependientes/ -> ");
-        return actividadFacade.obtenerActividades();
+        LOG.info("GET /objetos/actividad -> Obteniendo actividades");
+        try {
+            return actividadFacade.obtenerActividades();
+        } catch (Exception e) {
+            LOG.severe("Error al obtener actividades: " + e.getMessage());
+            // Aquí podrías lanzar una excepción específica o manejar el error de otra forma
+            throw new RuntimeException("Error al obtener actividades", e);
+        }
     }
 }
