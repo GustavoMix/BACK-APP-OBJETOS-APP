@@ -18,12 +18,12 @@
         <version>2.0.0</version>
     </parent>
     <dependencies>
-             <dependency>
+        <dependency>
             <groupId>gestora</groupId>
             <artifactId>DataBaseLib</artifactId>
             <version>2.0.3</version>
         </dependency>
-         <dependency>
+        <dependency>
             <groupId>gestora</groupId>
             <artifactId>AngularResourcesLib</artifactId>
             <version>1.0.0</version>
@@ -60,7 +60,7 @@
             <version>5.6.12.Final</version>
             <type>jar</type>
         </dependency>
-         <dependency>
+        <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20210307</version>
@@ -94,11 +94,17 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy-multipart</artifactId>
         </dependency>
-              <dependency>
+        <dependency>
             <groupId>gestora</groupId>
             <artifactId>ContraintsLib</artifactId>
             <version>1.1.1</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
     <name>proyecto_grado</name>
 </project>
