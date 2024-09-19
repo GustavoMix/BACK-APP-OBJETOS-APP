@@ -23,7 +23,7 @@ public class ObjetosExtraviadosFacade {
     @Inject
     AppConfig appConfig;
     
-    public List<ObjetosExtraviadosRs> obtenerObjetosEncontrados() throws NoFountRepoException {
+    public List<ObjetosExtraviadosRs> obtenerObjetosExtraviados() throws NoFountRepoException {
     LOG.info("Rq-> Obteniendo lista");
     ObjetosExtraviadosRepo objetosExtraviadosRepo = dBConnector.getQueryRepository(ObjetosExtraviadosRepo.class);
     List<ObjetosExtraviadosRs> lista = objetosExtraviadosRepo.obtenerObjetosExtraviados();

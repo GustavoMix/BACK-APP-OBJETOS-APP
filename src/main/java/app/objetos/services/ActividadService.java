@@ -1,6 +1,5 @@
-package app.objetos.services;
-
 import app.objetos.dto.ActividadRs;
+import app.objetos.dto.RespuestaGenericaRs;
 import app.objetos.facade.ActividadFacade;
 
 import javax.inject.Inject;
@@ -8,6 +7,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -21,14 +21,16 @@ public class ActividadService {
     @GET
     @Path("/actividad")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<ActividadRs> obtenerActividades() {
+    public Response obtenerActividades() {
         LOG.info("GET /objetos/actividad -> Obteniendo actividades");
         try {
-            return actividadFacade.obtenerActividades();
+            List<ActividadRs> actividades = actividadFacade.obtenerActividades();
+            RespuestaGenericaRs respuesta = new RespuestaGenericaRs("2000", "Operación realizada correctamente", actividades);
+            return Response.ok(respuesta).build();
         } catch (Exception e) {
             LOG.severe("Error al obtener actividades: " + e.getMessage());
-            // Aquí podrías lanzar una excepción específica o manejar el error de otra forma
-            throw new RuntimeException("Error al obtener actividades", e);
+            RespuestaGenericaRs respuestaError = new RespuestaGenericaRs("5000", "Error al obtener actividades", null);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(respuestaError).build();
         }
     }
 }
